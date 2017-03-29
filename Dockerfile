@@ -1,7 +1,7 @@
 FROM busybox:latest
 MAINTAINER lauwarm <lauwarm@mailbox.org>
 
-ENV version=1.3.0~1937~g289d0d4~snapshot
+ENV version=1.3.0~2198~g282d672~snapshot
 
 ADD https://dl.mumble.info/murmur-static_x86-${version}.tar.bz2 /opt/
 
