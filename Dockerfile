@@ -12,4 +12,6 @@ COPY murmur.ini /data/murmur.ini
 
 EXPOSE 64738/tcp 64738/udp
 
+VOLUME [ "/data" ]
+
 CMD ["/opt/murmur/murmur.x86", "-fg", "-v", "-ini", "/data/murmur.ini"]
