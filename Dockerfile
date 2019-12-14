@@ -3,7 +3,7 @@ LABEL maintainer="Dave Akers <dave@dazoe.net>"
 
 ADD https://www.mumble.info/downloads/linux-static-server/snapshot /opt/murmur-static_x86.tar.bz2
 
-RUN adduser -S murmur && \
+RUN adduser -Sh /data murmur && \
     bzcat /opt/murmur-static_x86.tar.bz2 | tar -x -C /opt -f - && \
     rm /opt/murmur-static_x86.tar.bz2 && \
     mv /opt/murmur-static_x86-* /opt/murmur
