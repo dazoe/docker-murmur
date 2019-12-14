@@ -1,14 +1,12 @@
 FROM busybox:latest
-MAINTAINER lauwarm <lauwarm@mailbox.org>
+LABEL maintainer="Dave Akers <dave@dazoe.net>"
 
-ENV version=1.3.0~2961~g1ee050a~snapshot
-
-ADD https://dl.mumble.info/murmur-static_x86-${version}.tar.bz2 /opt/
+ADD https://www.mumble.info/downloads/linux-static-server/snapshot /opt/murmur-static_x86.tar.bz2
 
 RUN adduser -S murmur && \
-    bzcat /opt/murmur-static_x86-${version}.tar.bz2 | tar -x -C /opt -f - && \
-    rm /opt/murmur-static_x86-${version}.tar.bz2 && \
-    mv /opt/murmur-static_x86-${version} /opt/murmur
+    bzcat /opt/murmur-static_x86.tar.bz2 | tar -x -C /opt -f - && \
+    rm /opt/murmur-static_x86.tar.bz2 && \
+    mv /opt/murmur-static_x86-* /opt/murmur
 
 COPY murmur.ini /etc/murmur.ini
 
