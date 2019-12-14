@@ -8,8 +8,8 @@ RUN adduser -S murmur && \
     rm /opt/murmur-static_x86.tar.bz2 && \
     mv /opt/murmur-static_x86-* /opt/murmur
 
-COPY murmur.ini /etc/murmur.ini
+COPY murmur.ini /data/murmur.ini
 
 EXPOSE 64738/tcp 64738/udp
 
-CMD ["/opt/murmur/murmur.x86", "-fg", "-v", "-ini", "/etc/murmur.ini"]
+CMD ["/opt/murmur/murmur.x86", "-fg", "-v", "-ini", "/data/murmur.ini"]
