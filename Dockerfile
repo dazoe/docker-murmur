@@ -1,7 +1,7 @@
 FROM busybox:latest
 LABEL maintainer="Dave Akers <dave@dazoe.net>"
 
-ADD https://www.mumble.info/downloads/linux-static-server/snapshot /opt/murmur-static_x86.tar.bz2
+ADD https://www.mumble.info/downloads/linux-static-server /opt/murmur-static_x86.tar.bz2
 
 RUN adduser -Sh /data murmur && \
     bzcat /opt/murmur-static_x86.tar.bz2 | tar -x -C /opt -f - && \
